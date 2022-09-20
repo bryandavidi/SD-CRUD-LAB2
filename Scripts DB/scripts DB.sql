@@ -6,8 +6,8 @@ CREATE TYPE estado_estudiante as ENUM('Matriculado', 'No matriculado', 'Aplazado
 CREATE TABLE estudiantes(
 	id_estudiante NUMERIC NOT NULL,
 	codigo_estudiante NUMERIC NOT NULL,
-	cedula VARCHAR(10) documento NOT NULL,
-	numero_documento  NOT NULL,
+	cedula  documento NOT NULL,
+	numero_documento VARCHAR(10) NOT NULL,
 	nombres VARCHAR(30) NOT NULL,
 	apellidos VARCHAR(30) NOT NULL,
 	estado estado_estudiante NOT NULL,
@@ -27,6 +27,6 @@ CREATE TABLE MATERIAS(
 CREATE TABLE inscripciones(
 	id_estudiante NUMERIC NOT NULL,
 	id_materia NUMERIC NOT NULL,
-	fecha_inscripcion DATETIME NOT NULL,
+	fecha_inscripcion TIMESTAMP NOT NULL,
 	CONSTRAINT inscripcion_pk PRIMARY KEY(id_estudiante, id_materia)
 );
