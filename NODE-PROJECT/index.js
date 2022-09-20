@@ -8,7 +8,8 @@ app.get('/', (req, res) => {
     res.send('Welcome to CRUD');
 });
 
-app.use('/estudiantes',routes)
+app.use('/api/v1',routes)
+
 
 app.listen(port, () => {
     console.log('Server Running on port' + port)
