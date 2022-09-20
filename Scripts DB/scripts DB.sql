@@ -1,12 +1,16 @@
+CREATE TYPE documento as ENUM ('Cedula', 
+		'Tarjeta de identidad', 'Pasaporte');
+
+CREATE TYPE estado_estudiante as ENUM('Matriculado', 'No matriculado', 'Aplazado');
+
 CREATE TABLE estudiantes(
 	id_estudiante NUMERIC NOT NULL,
 	codigo_estudiante NUMERIC NOT NULL,
-	cedula VARCHAR(10) NOT NULL,
-	numero_documento ENUM('Cedula', 
-		'Tarjeta de identidad', 'Pasaporte') NOT NULL,
+	cedula VARCHAR(10) documento NOT NULL,
+	numero_documento  NOT NULL,
 	nombres VARCHAR(30) NOT NULL,
 	apellidos VARCHAR(30) NOT NULL,
-	estado_estudiante ENUM('Matriculado', 'No matriculado', 'Aplazado'),
+	estado estado_estudiante NOT NULL,
 	CONSTRAINT estudiante_pk PRIMARY KEY (id_estudiante)
 );
 
