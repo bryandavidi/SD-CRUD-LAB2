@@ -3,7 +3,7 @@ const pool = require('./libs/postgres');
 const routes = express.Router()
 
 routes.get('/', async(req, res) => {
-    const consult = await pool.query('select * from inscripciones')
+    const consult = await pool.query('select * from estudiantes')
     res.json(consult)
 })
 
