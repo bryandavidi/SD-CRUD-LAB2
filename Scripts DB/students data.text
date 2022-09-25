@@ -1,3 +1,6 @@
+ALTER TABLE estudiantes
+RENAME column cedula TO tipo_documento;
+
 INSERT INTO estudiantes VALUES
   (5,201020742,'Cedula',1002741505,'Claire','Cruz','Matriculado'),
   (6,201020743,'Pasaporte',1002741604,'Gage','Atlas','Matriculado'),
@@ -8,7 +11,9 @@ INSERT INTO estudiantes VALUES
   (11,201020748,'Cedula',1002742099,'Lillian','Green','Aplazado'),
   (12,201020749,'Pasaporte',1002742198,'Jasper','Perez','Aplazado'),
   (13,201020750,'Tarjeta de identidad',1002742297,'Whilemina','Hall','Aplazado'),
-  (14,201020751,'Cedula',1002742396,'Barrett','Carpenter','Matriculado'),
+  (14,201020751,'Cedula',1002742396,'Barrett','Carpenter','Matriculado');
+
+INSERT INTO estudiantes VALUES
   (15,201020752,'Pasaporte',1002742495,'Callum','Lopez','Matriculado'),
   (16,201020753,'Tarjeta de identidad',1002742594,'Kirestin','St-pierre','Matriculado'),
   (17,201020754,'Cedula',1002742693,'Preston','Maximiliano','No matriculado'),
@@ -18,7 +23,9 @@ INSERT INTO estudiantes VALUES
   (21,201020758,'Pasaporte',1002743089,'Cara','Perreault','Aplazado'),
   (22,201020759,'Tarjeta de identidad',1002743188,'Boris','Ward','Aplazado'),
   (23,201020760,'Cedula',1002743287,'Jonah','Turner','Matriculado'),
-  (24,201020761,'Pasaporte',1002743386,'Leandra','Hoffman','Matriculado'),
+  (24,201020761,'Pasaporte',1002743386,'Leandra','Hoffman','Matriculado');
+
+INSERT INTO estudiantes VALUES
   (25,201020762,'Tarjeta de identidad',1002743485,'George','Vera','Matriculado'),
   (26,201020763,'Cedula',1002743584,'Richard','Richardson','No matriculado'),
   (27,201020764,'Pasaporte',1002743683,'Yen','Valentina','No matriculado'),
@@ -28,7 +35,9 @@ INSERT INTO estudiantes VALUES
   (31,201020768,'Tarjeta de identidad',1002744079,'Kirk','Benjamin','Aplazado'),
   (32,201020769,'Cedula',1002744178,'Doris','Rodriguez','Matriculado'),
   (33,201020770,'Pasaporte',1002744277,'Octavia','Davidson','Matriculado'),
-  (34,201020771,'Tarjeta de identidad',1002744376,'Inga','Trinidad','Matriculado'),
+  (34,201020771,'Tarjeta de identidad',1002744376,'Inga','Trinidad','Matriculado');
+
+INSERT INTO estudiantes VALUES
   (35,201020772,'Cedula',1002744475,'Bernard','Tomas','No matriculado'),
   (36,201020773,'Pasaporte',1002744574,'Colin','Miranda','No matriculado'),
   (37,201020774,'Tarjeta de identidad',1002744673,'Boris','Schmidt','No matriculado'),
@@ -38,7 +47,9 @@ INSERT INTO estudiantes VALUES
   (41,201020778,'Cedula',1002745069,'Maya','Maximiliano','Matriculado'),
   (42,201020779,'Pasaporte',1002745168,'Briar','Yang','Matriculado'),
   (43,201020780,'Tarjeta de identidad',1002745267,'Myles','Black','Matriculado'),
-  (44,201020781,'Cedula',1002745366,'Courtney','Hamel','No matriculado'),
+  (44,201020781,'Cedula',1002745366,'Courtney','Hamel','No matriculado');
+
+INSERT INTO estudiantes VALUES
   (45,201020782,'Pasaporte',1002745465,'Risa','Paz','No matriculado'),
   (46,201020783,'Tarjeta de identidad',1002745564,'Omar','Spencer','No matriculado'),
   (47,201020784,'Cedula',1002745663,'Vance','Nicolas','Aplazado'),
