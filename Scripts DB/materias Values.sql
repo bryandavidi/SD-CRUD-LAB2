@@ -1,8 +1,3 @@
-insert into estudiantes values
-    (1, 201910923, 'Cedula', '11920931', 'julian', 'Ardila', 'Matriculado'),
-    (2, 202010923, 'Cedula', '10093291', 'Andres', 'Amaya', 'Matriculado'),
-    (3, 20180923, 'Cedula', '11203902', 'Bryan', 'Ibañez', 'Aplazado');
-
 insert into materias values
     (200, '9382', 'Distribuidos', 4, 20, true),
     (202, '9422', 'Comunicaciones', 3, 15, true),
@@ -58,7 +53,4 @@ insert into materias values
     (252, '9450', 'Finanzas', 3, 25, false),
     (253, '9451', 'Ingenieria de pruebas', 4, 25, false),
     (254, '9452', 'TICS y ley informatica', 3, 25, false),
-    (255, '9453', 'Sguridad informatica', 3, 25, false),
-
-
-
+    (255, '9453', 'Sguridad informatica', 3, 25, false);
