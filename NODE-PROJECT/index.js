@@ -1,17 +1,25 @@
 const express = require('express');
-const routes_course = require('./routes/routes_course');
-const routes_inscription = require('./routes/routes_inscription');
-const routes_student = require('./routes/routes_student');
-const port = 3000;
+const router_course = require('./routes/routes_course');
+const router_inscription = require('./routes/routes_inscription');
+const router_student = require('./routes/routes_student');
+router_inscription
 
+const port = 3000;  
 const app = express();
+app.use(express.json())
 
 app.get('/', (req, res) => {
     res.send('Welcome to CRUD');
 });
 
-routerApi(app);
+app.use('/estudiante',router_student);
+
+app.use('/inscripciones',router_inscription);
+
+app.use('/materias',router_course);
+
+
 
 app.listen(port, () => {
-    console.log('Server Running on port' + port)
+    console.log('Server Running on port ' + port)
 })
