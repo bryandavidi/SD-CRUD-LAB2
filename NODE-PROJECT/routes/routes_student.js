@@ -1,11 +1,11 @@
 const express = require('express')
-const pool = require('./libs/postgres');
-const routes_student = express.Router()
+const pool = require('../libs/postgres');
 
+const router = express.Router()
 
-routes.get('/estudiantes', async(req, res) => {
+router.get('/', async(req, res) => {
     const consult = await pool.query('select * from estudiantes')
-    res.json(consult)
+    res.status(200).json(consult.rows);
 })
 
-module.exports = routes_student
+module.exports = router
