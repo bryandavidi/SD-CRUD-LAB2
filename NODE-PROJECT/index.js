@@ -10,14 +10,8 @@ app.get('/', (req, res) => {
     res.send('Welcome to CRUD');
 });
 
-app.use('/api/v1',routes_student)
-app.use('/api/v1',routes_course)
-app.use('/api/v1',routes_inscription)
-
-
-
+routerApi(app);
 
 app.listen(port, () => {
     console.log('Server Running on port' + port)
 })
-
