@@ -1,6 +1,6 @@
 const express = require('express');
 const sequelize = require('./database/database')
-const router_course = require('./routes/routes_course');
+const routes_course = require('./routes/routes_course');
 const router_inscription = require('./routes/routes_inscription');
 const routes_student = require('./routes/routes_student');
 
@@ -34,7 +34,8 @@ async function main(){
     } catch (error) {
         console.error(error, 'Conexion a la base de datos fallida')
     }
-    app.use('/', routes_student)
+    app.use('/', routes_student);
+    app.use('/curso',routes_course);
 }
 
 main();
