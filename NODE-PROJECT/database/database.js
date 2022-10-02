@@ -1,6 +1,8 @@
-import { Sequelize } from "sequelize";
+const { Sequelize } = require("sequelize");
 
-export const sequelize = new Sequelize('sira','Bryan','Sistemasdistribuidos2022',{
+const sequelize = new Sequelize('sira','Bryan','Sistemasdistribuidos2022',{
     host: 'crud-sd.postgres.database.azure.com',
     dialect: 'postgres'
 });
+
+module.exports = sequelize;
