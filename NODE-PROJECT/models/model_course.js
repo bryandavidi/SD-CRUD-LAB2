@@ -4,8 +4,7 @@ const sequelize = require("../database/database");
 const model_course = sequelize.define('materias',{
     id_materia : {
         type: DataTypes.NUMBER,
-        primaryKey:true,
-        autoIncrement:true},
+        primaryKey:true},
     codigo_materia : {
         type: DataTypes.STRING
     },

@@ -24,6 +24,8 @@ app.use(express.json())
 // app.listen(port, () => {
 //     console.log('Server Running on port ' + port)
 // })
+app.use('/', routes_student);
+app.use('/curso',routes_course);
 
 async function main(){
     app.listen(port)
@@ -34,8 +36,7 @@ async function main(){
     } catch (error) {
         console.error(error, 'Conexion a la base de datos fallida')
     }
-    app.use('/', routes_student);
-    app.use('/curso',routes_course);
+
 }
 
 main();
