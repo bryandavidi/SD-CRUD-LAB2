@@ -19,7 +19,7 @@ async function main(){
     } catch (error) {
         console.error(error, 'Conexion a la base de datos fallida')
     }
-    app.use(routes_student);
+    app.use('/',routes_student);
     app.use('/',routes_course);
 
     app.use('/',(req,res)=>{

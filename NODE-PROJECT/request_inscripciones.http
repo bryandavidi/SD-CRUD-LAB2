@@ -1,15 +1,2 @@
 ###
-GET http://localhost:3000/inscripciones HTTP/1.1
-
-###
-POST http://localhost:3000/inscripciones/agregar HTTP/1.1
-Content-Type: application/json
-
-{
-    "id_estudiante":800,
-    "id_materia": 240,
-    "fecha_inscripcion": "2021-09-16 11:01:12"
-}
-
-###
-DELETE http://localhost:3000/inscripciones/borrar/2/207 HTTP/1.1
+GET http://localhost:3000/inscripciones/todas HTTP/1.1

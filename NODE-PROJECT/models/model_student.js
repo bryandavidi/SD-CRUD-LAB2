@@ -23,7 +23,10 @@ const model_student = sequelize.define('estudiantes',{
     },
     estado :{
         type: DataTypes.STRING
-    }
+    },
+    }, 
+    {
+    timestamps: false,
 });
 
 module.exports = model_student;

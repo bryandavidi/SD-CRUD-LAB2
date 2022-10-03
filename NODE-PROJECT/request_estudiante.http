@@ -1,5 +1,5 @@
 ###
-GET http://localhost:3000/estudiantes HTTP/1.1
+GET http://localhost:3000/estudiantes/todos HTTP/1.1
 
    
 
