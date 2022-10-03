@@ -1,7 +1,7 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../database/database");
 
-const model_inscription = sequelize.define('materias',{
+const model_inscription = sequelize.define('inscripciones',{
     id_estudiante : {
         type: DataTypes.NUMBER,
         primaryKey:true},

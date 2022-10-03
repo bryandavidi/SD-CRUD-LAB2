@@ -21,6 +21,7 @@ async function main(){
     }
     app.use('/',routes_student);
     app.use('/',routes_course);
+    app.use('/',router_inscription);
 
     app.use('/',(req,res)=>{
         res.send('WELCOME');
