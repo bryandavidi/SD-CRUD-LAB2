@@ -18,8 +18,12 @@ const model_course = sequelize.define('materias',{
         type: DataTypes.NUMBER
     },
     estado_activo :{
-        type: DataTypes.BOOLEAN
-    }
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
+    },
+    }, {
+         timestamps: false,
+         
 });
 
 module.exports = model_course;

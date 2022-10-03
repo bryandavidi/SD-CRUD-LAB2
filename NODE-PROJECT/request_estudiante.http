@@ -1,26 +1,5 @@
 ###
-GET http://localhost:3000/estudiante/todos HTTP/1.1
-
-###
-POST http://localhost:3000/estudiante/agregar HTTP/1.1
-Content-Type: application/json
-
-{
-    "id_estudiante":801,
-    "codigo_estudiante": 201021021,
-    "tipo_documento": "Cedula",
-    "numero_documento" : 123122139,
-    "nombres" : "David",
-    "apellidos" : "Ibanez",
-    "estado" : "Matriculado"
-    
-}
-
-###
-DELETE http://localhost:3000/estudiante/borrar/5 HTTP/1.1
-
-###
-PUT http://localhost:3000/estudiante/actualizar/Juan/8 HTTP/1.1
+GET http://localhost:3000/estudiantes HTTP/1.1
 
    
 
