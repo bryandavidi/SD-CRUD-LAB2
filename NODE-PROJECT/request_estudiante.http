@@ -1,5 +1,18 @@
 ###
 GET http://localhost:3000/estudiantes/todos HTTP/1.1
 
+###
+GET http://localhost:3000/estudiantes/id HTTP/1.1
+
+
+###
+GET http://localhost:3000/estudiantes/idCC HTTP/1.1
+
+###
+POST  http://localhost:3000/estudiantes/crear HTTP/1.1
+
+
+###
+DELETE  http://localhost:3000/estudiantes/eliminar HTTP/1.1
    
 
