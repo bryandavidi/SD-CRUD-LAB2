@@ -1,2 +1,18 @@
 ###
 GET http://localhost:3000/materias/todas HTTP/1.1
+
+###
+GET http://localhost:3000/materias/id HTTP/1.1
+
+
+###
+GET http://localhost:3000/materias/datos HTTP/1.1
+
+###
+POST  http://localhost:3000/materias/crear HTTP/1.1
+
+
+###
+DELETE  http://localhost:3000/materias/eliminar HTTP/1.1
+   
+

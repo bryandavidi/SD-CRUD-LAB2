@@ -1,4 +1,3 @@
-const { where } = require('sequelize');
 const model_student = require ('../models/model_student');
 
 const getStudents = async(req,res)=>{

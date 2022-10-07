@@ -1,6 +1,6 @@
-const express = require("express");
+const express = require('express');
 const routes_student = express.Router();
-const { getStudents, getStudentsId, getStudentsIdCC, createStudent,deleteStudent } = require("../querys/querys_student");
+const { getStudents, getStudentsId, getStudentsIdCC, createStudent,deleteStudent } = require('../querys/querys_student');
 
 routes_student.get('/estudiantes/todos',getStudents);
 routes_student.get('/estudiantes/id',getStudentsId);
