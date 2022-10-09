@@ -1,2 +1,12 @@
 ###
 GET http://localhost:3000/inscripciones/todas HTTP/1.1
+
+
+###
+GET http://localhost:3000/inscripciones/id HTTP/1.1
+
+###
+POST http://localhost:3000/inscripciones/crear HTTP/1.1
+
+###
+DELETE http://localhost:3000/inscripciones/eliminar HTTP/1.1
