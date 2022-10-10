@@ -3,7 +3,7 @@ const model_student = require ('../models/model_student');
 const getStudents = async(req,res)=>{
     try {
         const students = await model_student.findAll();
-        res.json(students);
+        res.status(200).json(students);
     } catch (error) {
         res.status(500)
     }
@@ -18,7 +18,7 @@ const getStudentsId = async(req,res)=>{
                 } 
             }
         );
-        res.json(students);
+        res.status(200).json(students);
     } catch (error) {
         res.status(500)
     }
@@ -31,7 +31,7 @@ const getStudentsIdCC = async(req,res)=>{
                 attributes : ['nombres','apellidos','codigo_estudiante','numero_documento' ]
             }
         );
-        res.json(students);
+        res.status(200).json(students);
     } catch (error) {
         res.status(500)
     }
@@ -48,9 +48,9 @@ const createStudent = async(req,res)=>{
         apellidos :"Ibanez",
         estado :"Matriculado"})
 
-        res.send('Creando estudiante')
+        res.status(201).send('Creando estudiante')
     } catch (error) {
-        res.status(500);
+        res.status(400);
     }
 };
 
@@ -62,6 +62,7 @@ const deleteStudent = async(req,res)=>{
                 id_estudiante : 999
             }
         })
+        res.status(202)
         console.log('Estudiante eliminado')
     } catch (error) {
         res.status(500)

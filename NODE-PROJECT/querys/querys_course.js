@@ -3,7 +3,7 @@ const model_course = require ('../models/model_course');
 const getCourses = async(req,res)=>{
     try {
         const courses = await model_course.findAll();
-        res.json(courses);
+        res.status(200).json(courses);
     } catch (error) {
         res.status(500)
     }
@@ -18,7 +18,7 @@ const getCourseId = async(req,res)=>{
                 } 
             }
         );
-        res.json(course);
+        res.status(200).json(course);
     } catch (error) {
         res.status(500)
     }
@@ -31,7 +31,7 @@ const getCourseData = async(req,res)=>{
                 attributes : ['nombre_materia','cupos']
             }
         );
-        res.json(courses);
+        res.status(200).json(courses);
     } catch (error) {
         res.status(500)
     }
@@ -48,9 +48,9 @@ const createCourse = async(req,res)=>{
         estado_activo : true
     })
 
-        res.send('Creando materia')
+        res.status(201).send('Creando materia')
     } catch (error) {
-        res.status(500);
+        res.status(400);
     }
 };
 
@@ -62,6 +62,7 @@ const deleteCourse = async(req,res)=>{
                 id_materia : 999
             }
         })
+        res.status(202)
         console.log('Materia eliminada')
     } catch (error) {
         res.status(500)
