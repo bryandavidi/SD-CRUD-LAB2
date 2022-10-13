@@ -8,8 +8,8 @@ GET http://localhost:3000/materias/id/200 HTTP/1.1
 ###
 GET http://localhost:3000/materias/datos HTTP/1.1
 
-###
-POST  http://localhost:3000/materias/crear/900/8880/prueba/4/30/true HTTP/1.1
+###Y
+POST  http://localhost:3000/materias/crear?id_materia=900&codigo_materia=9999&nombre_materia="prueba"&creditos_materia=4&cupos=30&estado_activo=true HTTP/1.1
 
 
 ###

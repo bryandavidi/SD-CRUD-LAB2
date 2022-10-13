@@ -10,7 +10,7 @@ const getCourses = async(req,res)=>{
 };
 
 const getCourseId = async(req,res)=>{
-    let id = req.params.id;
+    const {id} = req.params;
     try {
         const course = await model_course.findAll( 
             {
@@ -57,7 +57,7 @@ const createCourse = async(req,res)=>{
 
 
 const deleteCourse = async(req,res)=>{
-    let id = req.params.id;
+    const {id} = req.params;
         try {
         const course = await model_course.destroy({
             where:{
