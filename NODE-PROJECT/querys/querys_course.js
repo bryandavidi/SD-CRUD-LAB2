@@ -39,17 +39,16 @@ const getCourseData = async(req,res)=>{
 };
 
 const createCourse = async(req,res)=>{
-    var data = req.body;
+    const {id_materia,codigo_materia,nombre_materia,creditos_materia,cupos,estado_activo} = req.body;
     try {
         const course = await model_course.create({
-        id_materia : data.id_materia,
-        codigo_materia : "1111111",
-        nombre_materia :"Prueba",
-        creditos_materia :"4",
-        cupos : "4",
-        estado_activo : true
+        id_materia,
+        codigo_materia,
+        nombre_materia,
+        creditos_materia,
+        cupos,
+        estado_activo
     })
-
         res.status(201).send('Creando materia')
     } catch (error) {
         res.status(400);
@@ -58,10 +57,11 @@ const createCourse = async(req,res)=>{
 
 
 const deleteCourse = async(req,res)=>{
-    try {
+    let id = req.params.id;
+        try {
         const course = await model_course.destroy({
             where:{
-                id_materia : 999
+                id_materia : id
             }
         })
         res.status(202)

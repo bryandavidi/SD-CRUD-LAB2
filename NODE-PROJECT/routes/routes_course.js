@@ -6,6 +6,6 @@ routes_course.get('/materias/todas',getCourses);
 routes_course.get('/materias/id/:id',getCourseId);
 routes_course.get('/materias/datos',getCourseData);
 routes_course.post('/materias/crear/:id/:codigo_materia/:nombre_materia/:credito_materia/:cupos/:estado_activo',createCourse);
-routes_course.delete('/materias/eliminar',deleteCourse);
+routes_course.delete('/materias/eliminar/:id ',deleteCourse);
 
 module.exports = routes_course;

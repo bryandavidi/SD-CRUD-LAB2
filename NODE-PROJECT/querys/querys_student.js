@@ -10,11 +10,12 @@ const getStudents = async(req,res)=>{
 };
 
 const getStudentsId = async(req,res)=>{
+    let id = req.params.id;
     try {
         const students = await model_student.findAll( 
             {
                 where :{
-                    id_estudiante : 999
+                    id_estudiante : id
                 } 
             }
         );
@@ -56,10 +57,11 @@ const createStudent = async(req,res)=>{
 
 
 const deleteStudent = async(req,res)=>{
+    let id = req.params.id;
     try {
         const students = await model_student.destroy({
             where:{
-                id_estudiante : 999
+                id_estudiante : id ,
             }
         })
         res.status(202)

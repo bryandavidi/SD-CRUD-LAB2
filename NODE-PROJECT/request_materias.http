@@ -2,14 +2,14 @@
 GET http://localhost:3000/materias/todas HTTP/1.1
 
 ###
-GET http://localhost:3000/materias/id HTTP/1.1
+GET http://localhost:3000/materias/id/200 HTTP/1.1
 
 
 ###
 GET http://localhost:3000/materias/datos HTTP/1.1
 
 ###
-POST  http://localhost:3000/materias/crear HTTP/1.1
+POST  http://localhost:3000/materias/crear/900/8880/prueba/4/30/true HTTP/1.1
 
 
 ###
