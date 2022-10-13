@@ -10,11 +10,12 @@ const getCourses = async(req,res)=>{
 };
 
 const getCourseId = async(req,res)=>{
+    let id = req.params.id;
     try {
         const course = await model_course.findAll( 
             {
                 where :{
-                    id_materia : 999
+                    id_materia : id
                 } 
             }
         );
@@ -38,9 +39,10 @@ const getCourseData = async(req,res)=>{
 };
 
 const createCourse = async(req,res)=>{
+    var data = req.body;
     try {
         const course = await model_course.create({
-        id_materia : "999",
+        id_materia : data.id_materia,
         codigo_materia : "1111111",
         nombre_materia :"Prueba",
         creditos_materia :"4",

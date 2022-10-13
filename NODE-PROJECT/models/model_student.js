@@ -5,7 +5,8 @@ const model_student = sequelize.define('estudiantes',{
     id_estudiante : {
         type: DataTypes.INTEGER,
         primaryKey:true,
-        autoIncrement:true},
+        autoIncrement:true
+    },
     codigo_estudiante : {
         type: DataTypes.INTEGER
     },
