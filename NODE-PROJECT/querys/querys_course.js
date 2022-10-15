@@ -16,8 +16,8 @@ const getCourseId = async(req,res)=>{
         const course = await model_course.findOne( 
             {
                 where :{
-                    id_materia : id_materia
-                } 
+                    id_materia
+                },
             }
         );
         res.status(200).json(course);
@@ -60,17 +60,18 @@ const createCourse = async(req,res)=>{
 };
 
 const updateCourse = async(req,res)=>{
-    const {id_materia} = req.params;
+    const {id} = req.params;
         try {
         const course = await model_course.findOne( 
             {
                 where :{
-                    id_materia : id_materia
-                } 
+                    id_materia : id
+                } ,
             }
         );
         course.set(req.body);
         await course.save();
+        res.json(course);
     res.status(202).send('Materia actualizada')
     } catch (error) {
         res.status(500)
@@ -83,8 +84,8 @@ const deleteCourse = async(req,res)=>{
         try {
         const course = await model_course.destroy({
             where:{
-                id_materia : id_materia
-            }
+                id_materia
+            },
         })
         res.status(202).send('Materia eliminada')
     } catch (error) {
