@@ -10,12 +10,12 @@ const getStudents = async(req,res)=>{
 };
 
 const getStudentsId = async(req,res)=>{
-    let id = req.params.id;
+    let {id_estudiante} = req.body;
     try {
-        const students = await model_student.findAll( 
+        const students = await model_student.findOne( 
             {
                 where :{
-                    id_estudiante : id
+                    id_estudiante
                 } 
             }
         );
@@ -25,11 +25,14 @@ const getStudentsId = async(req,res)=>{
     }
 };
 
-const getStudentsIdCC = async(req,res)=>{
+const getActiveStudents = async(req,res)=>{
     try {
         const students = await model_student.findAll( 
             {
-                attributes : ['nombres','apellidos','codigo_estudiante','numero_documento' ]
+                attributes : ['nombres','apellidos','codigo_estudiante','numero_documento' ],
+                where:{
+                    estado: "Matriculado"
+                }
             }
         );
         res.status(200).json(students);
@@ -39,17 +42,37 @@ const getStudentsIdCC = async(req,res)=>{
 };
 
 const createStudent = async(req,res)=>{
+    const {id_estudiante,codigo_estudiante,tipo_documento,numero_documento,nombres,apellidos,estado} = req.body;
     try {
         const students = await model_student.create({
-        id_estudiante : "995",
-        codigo_estudiante : "201910225",
-        tipo_documento :"Cedula",
-        numero_documento :"10109101",
-        nombres : "Bryan David ",
-        apellidos :"Ibanez",
-        estado :"Matriculado"})
+        id_estudiante,
+        codigo_estudiante,
+        tipo_documento,
+        numero_documento,
+        nombres,
+        apellidos,
+        estado
+    })
+        res.status(201).send('Estudiante creado')
+    } catch (error) {
+        res.status(400);
+    }
+};
 
-        res.status(201).send('Creando estudiante')
+const updateStudent = async(req,res)=>{
+    const {id} = req.params;
+    try {
+        const student = await model_student.findOne( 
+            {
+                where :{
+                    id_estudiante: id
+                }
+            }
+        );
+        student.set(req.body);
+        await student.save();
+        res.json(student);
+        res.status(201).send('Estudiante actualizado')
     } catch (error) {
         res.status(400);
     }
@@ -57,15 +80,14 @@ const createStudent = async(req,res)=>{
 
 
 const deleteStudent = async(req,res)=>{
-    let id = req.params.id;
+    const {id_estudiante} = req.body;
     try {
         const students = await model_student.destroy({
             where:{
-                id_estudiante : id ,
+                id_estudiante
             }
         })
-        res.status(202)
-        console.log('Estudiante eliminado')
+        res.status(202).send('Estudiante eliminado')
     } catch (error) {
         res.status(500)
     }
@@ -75,8 +97,9 @@ const deleteStudent = async(req,res)=>{
 
 module.exports.getStudents = getStudents;
 module.exports.getStudentsId = getStudentsId;
-module.exports.getStudentsIdCC = getStudentsIdCC;
+module.exports.getActiveStudents = getActiveStudents;
 module.exports.createStudent = createStudent;
+module.exports.updateStudent = updateStudent;
 module.exports.deleteStudent = deleteStudent;
 
 

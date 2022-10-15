@@ -1,4 +1,3 @@
-const { where } = require('sequelize');
 const model_course = require ('../models/model_course');
 
 const getCourses = async(req,res)=>{
@@ -17,7 +16,7 @@ const getCourseId = async(req,res)=>{
             {
                 where :{
                     id_materia
-                },
+                }
             }
         );
         res.status(200).json(course);
@@ -66,7 +65,7 @@ const updateCourse = async(req,res)=>{
             {
                 where :{
                     id_materia : id
-                } ,
+                }
             }
         );
         course.set(req.body);
@@ -85,7 +84,7 @@ const deleteCourse = async(req,res)=>{
         const course = await model_course.destroy({
             where:{
                 id_materia
-            },
+            }
         })
         res.status(202).send('Materia eliminada')
     } catch (error) {
