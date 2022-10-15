@@ -1,3 +1,4 @@
+const { where } = require('sequelize');
 const model_course = require ('../models/model_course');
 
 const getCourses = async(req,res)=>{
@@ -10,12 +11,12 @@ const getCourses = async(req,res)=>{
 };
 
 const getCourseId = async(req,res)=>{
-    const {id} = req.params;
+    const {id_materia} = req.body;
     try {
-        const course = await model_course.findAll( 
+        const course = await model_course.findOne( 
             {
                 where :{
-                    id_materia : id
+                    id_materia : id_materia
                 } 
             }
         );
@@ -25,11 +26,14 @@ const getCourseId = async(req,res)=>{
     }
 };
 
-const getCourseData = async(req,res)=>{
+const getActiveCourses = async(req,res)=>{
     try {
         const courses = await model_course.findAll( 
             {
-                attributes : ['nombre_materia','cupos']
+                attributes : ['nombre_materia','cupos'],
+                where :{
+                    estado_activo: true
+                }
             }
         );
         res.status(200).json(courses);
@@ -49,23 +53,40 @@ const createCourse = async(req,res)=>{
         cupos,
         estado_activo
     })
-        res.status(201).send('Creando materia')
+        res.status(201).send('Materia creada')
     } catch (error) {
         res.status(400);
     }
 };
 
+const updateCourse = async(req,res)=>{
+    const {id_materia} = req.params;
+        try {
+        const course = await model_course.findOne( 
+            {
+                where :{
+                    id_materia : id_materia
+                } 
+            }
+        );
+        course.set(req.body);
+        await course.save();
+    res.status(202).send('Materia actualizada')
+    } catch (error) {
+        res.status(500)
+    }
+};
+
 
 const deleteCourse = async(req,res)=>{
-    const {id} = req.params;
+    const {id_materia} = req.body;
         try {
         const course = await model_course.destroy({
             where:{
-                id_materia : id
+                id_materia : id_materia
             }
         })
-        res.status(202)
-        console.log('Materia eliminada')
+        res.status(202).send('Materia eliminada')
     } catch (error) {
         res.status(500)
     }
@@ -74,6 +95,7 @@ const deleteCourse = async(req,res)=>{
 
 module.exports.getCourses = getCourses;
 module.exports.getCourseId = getCourseId;
-module.exports.getCourseData = getCourseData;
+module.exports.getActiveCourses = getActiveCourses;
 module.exports.createCourse = createCourse;
+module.exports.updateCourse = updateCourse;
 module.exports.deleteCourse = deleteCourse;
