@@ -11,12 +11,12 @@ const getInscription = async(req,res)=>{
 
 
 const getInscriptionId = async(req,res)=>{
+    const {id_estudiante,id_materia} = req.body
     try {
         const inscription = await model_inscription.findAll( 
             {
                 where :{
-                    id_estudiante : 265,
-                    id_materia : 242 
+                    id_estudiante
                 } 
             }
         );
@@ -28,14 +28,14 @@ const getInscriptionId = async(req,res)=>{
 
 
 const createInscription = async(req,res)=>{
+    const {id_estudiante,id_materia,fecha_inscripcion} = req.body
     try {
         const inscription = await model_inscription.create({
-        id_estudiante : "265",
-        id_materia : "242",
-        fecha_inscripcion :"2021-09-16T05:02:06.000Z"
+        id_estudiante,
+        id_materia,
+        fecha_inscripcion
         })
-
-        res.status(201).send('Creando Inscripcion')
+        res.status(201).send('Inscripcion creada')
     } catch (error) {
         res.status(400);
     }
@@ -43,15 +43,15 @@ const createInscription = async(req,res)=>{
 
 
 const deleteInscription = async(req,res)=>{
+    const {id_estudiante,id_materia} = req.body
     try {
         const inscripition = await model_inscription.destroy({
             where:{
-                id_estudiante : 265,
-                id_materia : 242
+                id_estudiante,
+                id_materia
             }
         })
-        res.status(202)
-        console.log('Inscripcion eliminada')
+        res.status(202).send('Inscripcion eliminada')
     } catch (error) {
         res.status(500)
     }
